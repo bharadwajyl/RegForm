@@ -1,0 +1,87 @@
+/*MAIN*/
+main{
+    align-items:center;
+}
+
+main figure{
+    width:100px;
+    margin:auto;
+    overflow:hidden;
+}
+
+main figure img{  
+    border-radius:10px;
+}
+
+form{
+    background-color:var(--white);
+    box-shadow:0px 6px 16px -6px rgba(1,1,1,0.1);
+}
+
+form .title{
+    margin-left:1rem;
+}
+
+form .flex{
+    align-items:center;
+}
+
+form fieldset .flex-content{
+    margin:0 0.2rem;
+}
+
+form .btn2{
+    width:100%;
+}
+
+form label{
+    display:block;
+    margin:0.5rem 0;
+}
+
+form input, form select{
+    width:100%;
+    padding:1rem;
+    background-color:#f9f9f9;
+    border:0;
+}
+
+form input[type=file]{
+    display:none;
+}
+
+.file{
+    padding:0.5rem;
+    border:2px dotted var(--primary);
+}
+
+.uploads .flex-content:nth-child(1) .file:before{
+    content:"Identity proof (govt id or passport)";
+}
+
+.uploads .flex-content:nth-child(2) .file:before{
+    content:"Address proof (govt id or passport)";
+}
+
+.uploads .flex-content .file:hover:before{
+    content:"Upload here";
+}
+
+form input[type=checkbox]{
+    width:fit-content;
+}
+
+form select{
+    color:gray;
+}
+
+@media (max-width:920px){
+    fieldset{
+        padding:0;
+    }
+    
+    form fieldset .flex-content{
+        margin:0.5rem 0;
+    }
+    
+}

@@ -1,0 +1,252 @@
+/***************************
+    CUSTOM SCROLL BAR
+****************************/
+*,html{
+    scroll-behavior: smooth;
+}
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root{
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+    scrollbar-width: thin !important;
+    --white:#fff;
+    --black:#131417;
+    --dark:#2b2a33;
+    --primary:#192b40;
+    --default:'Mukta', sans-serif;
+    --title:'Montserrat', sans-serif;
+    --cursive:'Dancing Script', cursive;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--dark);
+}
+
+
+/*DEFAULT*/
+body{
+    margin:0;
+    overflow-x:hidden !important;
+    font-family:var(--default);
+    background-color:#f9f9f9;
+}
+
+a, button, #popup{
+    text-decoration:none !important;
+    min-width: fit-content;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    transition:0.5s;
+}
+
+a, input, select, textarea, button{
+    outline:none !important;
+}
+
+em{
+    font-style:normal;
+    color:var(--primary);
+}
+
+p{
+    line-height:1.8em;
+}
+
+img{
+    max-width:100%;
+}
+
+fieldset{
+    border:0;
+}
+
+.flex{
+    display:flex;
+    justify-content:center;
+}
+
+.flex-content{
+    width:100%;
+    position:relative;
+}
+
+.title{
+    font-family:var(--title);
+}
+
+.cursive{
+    font-family:var(--cursive);
+}
+
+.parallelogram{
+    transform: skew(-20deg);
+    display:block;
+}
+
+.skew-fix{
+    display:inline-block;
+    transform: skew(20deg);
+}
+
+.padding_1x{
+    padding:1rem;
+}
+
+.padding_2x{
+    padding:2rem;
+}
+
+.padding_3x{
+    padding:3rem;
+}
+
+.padding_4x{
+    padding:4rem;
+}
+
+.sections{
+    position:relative;
+}
+
+.btn{
+    padding:1rem;
+    border:0;
+    text-align:center;
+    color:var(--white);
+    border-radius:5px;
+}
+
+.btn1{
+    background-color:var(--primary);
+}
+
+.btn2{
+    background-color:gray;
+}
+
+.btn3{
+    background-color:rgba(1,1,1,0.2);
+}
+
+.none{
+    pointer-events:none;
+    cursor:none;
+}
+
+@media (max-width:920px){
+    .flex{
+        flex-wrap:wrap;
+    }
+    
+    .padding_1x, .padding_2x, .padding_3x, .padding_4x{
+        padding:1rem;
+    }
+}
+
+
+
+/*Animate*/
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from { opacity:0 } 
+    to { opacity:1 }
+}
+
+@keyframes animatebottom { 
+    from{ opacity:0 } 
+    to{ opacity:1 }
+}
+
+@-webkit-keyframes fadein {
+    from {right: 0; opacity: 0;} 
+    to {right: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {right: 0; opacity: 0;}
+    to {right: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {right: 30px; opacity: 1;} 
+    to {right: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {right: 30px; opacity: 1;}
+    to {right: 0; opacity: 0;}
+}
+
+
+
+/*Popup*/
+#popup {
+    visibility: hidden;
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 999;
+    top: 30px;
+    right:0;
+    font-size: 14px;
+}
+
+#popup .fa{
+    margin-right:0.4rem;
+}
+
+.fa-check-circle-o{
+    color:green;
+}
+
+.fa-times-circle-o{
+    color:#f25e30;
+}
+
+.fa-question-circle-o{
+    color:yellow;
+}
+
+.success{
+    border-left:3px solid green;
+}
+
+.failure{
+    border-left:3px solid #f25e30;
+}
+
+#popup.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 5s;
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--TITLE-->
+<title>Register Page</title>
+
+<!--SHORTCUT ICON-->
+<link rel="shortcut icon" href="assets/images/logo.png">
+
+<!--META TAGS-->
+<meta charset="UTF-8">
+<meta name="language" content="ES">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--STYLE SHEET-->
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/home.css">
+
+</head>
+<body>
+
+<!--MAIN-->
+<main class="flex">
+    <section class="flex-content padding_2x">
+        <figure>
+            <img src="assets/images/logo.png" alt="" loading="lazy">
+        </figure>
+    </section>
+    <section class="flex-content padding_2x">
+        <form id="registration_form" class="padding_1x">
+            <h3 class="title">Register</h3>
+            <fieldset class="flex">
+                <span class="flex-content">
+                    <input type="text" name="fname" id="fname" placeholder="First name*" maxlenght="60">
+                </span>
+                <span class="flex-content">
+                    <input type="text" name="lname" id="lname" placeholder="Last name*" maxlenght="60">
+                </span>
+            </fieldset>
+            <fieldset class="half-col flex">
+                <span class="flex-content">
+                    <input type="email" name="email" id="email" placeholder="Email address*" maxlength="100">
+                </span>
+                <span class="flex-content" id="otp_section">
+                    <button class="btn btn1" id="otp_btn" onclick="event.preventDefault();Validate('otp')">Send verification code</button>
+                </span>
+            </fieldset>
+            <fieldset>
+                <select name="country" id="country">
+                    <option value="0">Choose your country</option>
+                </select>
+            </fieldset>
+            <fieldset class="uploads flex">
+                <span class="flex-content">
+                    <label for="id_proof" class="file"> 
+                        <input type="file" name="id_proof" id="id_proof">
+                    </label>
+                </span>
+                <span class="flex-content">
+                    <label for="addr_proof" class="file"> 
+                        <input type="file" name="addr_proof" id="addr_proof">
+                    </label>
+                </span>
+            </fieldset>
+            <fieldset>
+                <label for="terms flex">
+                    <input type="checkbox" name="terms" id="terms">
+                    <b>I agree to the Terms & Conditions</b>
+                </label>
+            </fieldset>
+            <fieldset>
+                <button class="btn btn1" id="registration_btn" onclick="event.preventDefault();Validate('registration')">Register</button>
+            </fieldset>
+        </form>
+    </section>
+</main>
+
+
+<!--JAVASCRIPT-->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/ajax.js"></script>
+</body>
+</html>
